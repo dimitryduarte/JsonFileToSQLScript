@@ -2,8 +2,8 @@ import fs from 'fs';
 import { Ec } from './json';
 import {formatterCNPJ} from './utils';
 
-const pathOrigin = 'ecs';
-const pathDestiny = 'script';
+const pathOrigin = 'jsonFiles';
+const pathDestiny = 'sqlScript';
 
 const querys: string[] = []
 
@@ -22,7 +22,7 @@ files.forEach((file) => {
 
   console.log(cnpj);
 
-  querys.push(`Update BusinessEstablishmentInfoes set BusinessSize = '${size}', BusinessType = '${type}', membershipQuantity = ${membershipQuant} where CNPJ = '${cnpj}'`);
+  querys.push(`Update TABLE_NAME set FIELD_NAME_1 = '${size}', FIELD_NAME_2 = '${type}', FIELD_NAME_3 = ${membershipQuant} where CNPJ = '${cnpj}'`);
 });
 
   console.log(querys);
